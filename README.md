@@ -53,18 +53,17 @@ Enabling connection logging records details about client connections, allowing a
 ### 10. **Self-service Portal**
 AWS provides a self-service portal, a web page where end users can download the AWS VPN Desktop Client and the latest configuration file. The portal is globally available, so end users can quickly access the tools and configuration they need.
 
----
 
 AWS Client VPN offers a powerful, scalable, and secure solution for organizations needing flexible remote access to cloud and on-premises resources. By handling the complexities of VPN management and scaling, AWS Client VPN enables administrators to focus on security and user access control. The deep integration with AWS services, coupled with robust authentication and authorization options, makes AWS Client VPN ideal for diverse, remote-work-friendly infrastructure.
 
 For further exploration, check out the official [AWS Client VPN documentation](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
 
-# AWS Client VPN Pricing Overview
+---
 
+# AWS Client VPN Pricing Overview
 
 AWS Client VPN pricing is structured around endpoint associations, connection hours, data transfer, and optional features such as connection logging and client connect handlers. This document provides a breakdown of AWS Client VPN’s pricing model, including additional costs for integrated AWS services.
 
----
 
 ## Pricing Components
 
@@ -93,7 +92,8 @@ AWS Client VPN pricing is structured around endpoint associations, connection ho
    - **Elastic IPs (EIPs)**: If Elastic IPs are allocated to the VPN’s network interfaces (ENIs) within a VPC with an Internet Gateway, they will incur additional charges as in-use public IPv4 addresses.
    - See [Elastic IP Pricing on the VPC Pricing Page](https://aws.amazon.com/vpc/pricing/) for details.
 
----
+
+
 
 
 AWS Client VPN offers a flexible and scalable VPN solution for connecting remote users securely to AWS and on-premises resources. While the base pricing includes endpoint and connection hours, other charges—such as data transfer, connection logging, and EIP use—may apply based on specific configurations and integrations with additional AWS services.
@@ -106,7 +106,6 @@ For further information, check AWS’s comprehensive [Client VPN Pricing Guide](
 
 This document outlines the essential rules and recommended best practices for configuring and using AWS Client VPN. Adhering to these guidelines ensures optimal performance, security, and reliability when connecting to AWS resources via Client VPN.
 
----
 
 ## Key Rules for AWS Client VPN Usage
 
@@ -146,7 +145,6 @@ This document outlines the essential rules and recommended best practices for co
 10. **Single User per Computer**
     - A VPN connection cannot be established from computers with multiple users logged in simultaneously.
 
----
 
 ## Security Recommendations
 
@@ -157,7 +155,8 @@ This document outlines the essential rules and recommended best practices for co
 2. **Connection Integrity**
    - AWS Client VPN enforces that the IP connected by the client matches the IP resolved by the Client VPN endpoint’s DNS name. This requirement helps protect against IP-based attacks.
 
----
+
+
 
 
 Following these rules and best practices for AWS Client VPN ensures robust and secure connections while maintaining compliance with AWS standards. Correctly configuring the Client VPN endpoint, client CIDR ranges, and subnet associations, along with adhering to the recommended security configurations, is essential to maximize performance and secure access to AWS resources.
@@ -195,9 +194,9 @@ The **client** is the end user who connects to the VPN endpoint to securely acce
   - **On-premises Networks:** Access to on-premises resources is available when routing rules are configured.
   - **Other Clients or Services:** Clients may interact with additional resources based on the configured routes and permissions.
 
-[![Architecture Diagram](file/pic.png)](file/pic.png)
-
 > For more details on connecting as a client, see [Getting Started in the AWS Client VPN User Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-user/client-vpn-user-guide.html).
+
+[![Architecture Diagram](file/pic.png)](file/pic.png)
 
 ---
 
@@ -205,7 +204,6 @@ The **client** is the end user who connects to the VPN endpoint to securely acce
 
 AWS Client VPN is a managed, client-based VPN service that enables secure access to AWS resources and on-premises networks. AWS Client VPN provides flexible configuration options for various network access needs. Below are some common scenarios and examples demonstrating how to configure Client VPN access for different use cases.
 
----
 
 ## Scenarios and Configuration Examples
 
@@ -269,7 +267,7 @@ AWS Client VPN is a managed, client-based VPN service that enables secure access
 
 [![Architecture Diagram](file/pic6.png)](file/pic6.png)
 
----
+
 
 AWS Client VPN offers versatile configurations for various access needs, including secure access to individual VPCs, peered VPCs, on-premises networks, and the internet. Each scenario leverages different aspects of AWS networking, such as VPC peering, route tables, security groups, and authorization rules. By understanding and applying these configurations based on specific use cases, organizations can optimize secure access to their AWS and on-premises resources.
 
