@@ -60,6 +60,90 @@ For further exploration, check out the official [AWS Client VPN documentation](h
 
 ---
 
+# AWS Client VPN Setup Guide
+
+This guide provides a step-by-step approach to setting up an AWS Client VPN, based on the AWS Management Console interface.
+
+## Table of Contents
+
+1. [Step 1: Create Client VPN Endpoint](#step-1-create-client-vpn-endpoint)
+2. [Step 2: Configure Authentication](#step-2-configure-authentication)
+3. [Step 3: Enable Optional Settings](#step-3-enable-optional-settings)
+4. [Step 4: Configure Tags](#step-4-configure-tags)
+5. [Step 5: Review and Create](#step-5-review-and-create)
+
+---
+
+AWS Client VPN is a fully managed, secure, and elastic VPN service that enables users to securely access both AWS resources and on-premises networks. It uses OpenVPN to allow access from anywhere and provides secure communication over the internet.
+
+---
+
+## Step 1: Create Client VPN Endpoint
+
+To begin setting up your VPN:
+
+1. Navigate to **VPC > Client VPN endpoints** and click **Create Client VPN endpoint**.
+2. In the **Details** section, specify the following information:
+   - **Name tag (optional)**: Enter a name for the VPN endpoint. (e.g., `client-vpn-endpoint-01`)
+   - **Description (optional)**: Enter a description for the VPN endpoint.
+   - **Client IPv4 CIDR**: Specify the IP range that will be assigned to clients when they connect to the VPN. The CIDR range should be between `/12` and `/22`. For example, `10.0.0.0/22`.
+
+---
+
+## Step 2: Configure Authentication
+
+1. **Server Certificate ARN**: Select the certificate that the Client VPN endpoint will use to authenticate clients. The certificate must be provisioned with AWS Certificate Manager (ACM).
+2. **Authentication options**:
+   - **Mutual authentication**: Uses client certificates for authentication.
+   - **User-based authentication**: Uses Active Directory or other user-based authentication systems.
+
+![Client VPN Endpoint Details](file/cvpn1.png)
+
+
+Select the authentication method that best fits your organization’s security requirements.
+
+---
+
+## Step 3: Enable Optional Settings
+
+1. **Connection logging** (optional): Enable this to log details on client connections. Connection logs provide information for troubleshooting and forensic analysis when clients attempt to connect.
+2. **Client connect handler** (optional): Enable this if you want to trigger an AWS Lambda function when clients connect to the VPN.
+
+![Authentication Configuration](file/cvpn2.png)
+![Tag Configuration](file/cvpn3.png)
+
+---
+
+## Step 4: Configure Tags
+
+1. In the **Tags** section, add tags to help identify and manage your VPN endpoint. Tags consist of key-value pairs, which can be used to organize your resources, track costs, or apply security policies.
+2. Click **Add new tag** to specify additional tags as needed.
+
+
+![Optional Settings](file/cvpn4.png)
+
+---
+
+## Step 5: Review and Create
+
+After configuring all the necessary settings:
+
+1. Review the configuration details.
+2. Click **Create client VPN endpoint** to complete the setup.
+
+
+
+---
+
+Once your Client VPN endpoint is created, you can proceed to associate it with a VPC, configure authorization rules, and manage access settings. AWS Client VPN provides a secure and scalable solution for remote access to your AWS resources and on-premises network.
+
+**Note:** Ensure that any IAM permissions, security group rules, and route tables are properly configured to allow traffic through the VPN as per your organization's network policies.
+
+---
+
+For more advanced configurations, refer to the [AWS Client VPN documentation](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
+
+
 # AWS Client VPN Pricing Overview
 
 AWS Client VPN pricing is structured around endpoint associations, connection hours, data transfer, and optional features such as connection logging and client connect handlers. This document provides a breakdown of AWS Client VPN’s pricing model, including additional costs for integrated AWS services.
